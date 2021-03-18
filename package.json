@@ -1,6 +1,6 @@
 {
   "name": "@callaars/react-native-portal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ultra-lightweight portal implementation.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
