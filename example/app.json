@@ -1,0 +1,22 @@
+{
+  "name": "@callaars/react-native-portal-example",
+  "displayName": "Portal Example",
+  "expo": {
+    "name": "@callaars/react-native-portal-example",
+    "slug": "callaars-react-native-portal-example",
+    "description": "Example app for @callaars/react-native-portal",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
