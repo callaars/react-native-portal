@@ -1,7 +1,8 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
+
+const transportedComponent: Set<ReactNode> = new Set();
 
 let listener: () => void = () => {};
-let transportedComponent: ReactElement;
 
 const PortalContext = () => {
   const [, forceUpdate] = useState<number>(0);
@@ -12,7 +13,7 @@ const PortalContext = () => {
     };
   }, []);
 
-  return transportedComponent || null;
+  return <>{transportedComponent || null}</>;
 };
 
 export const PortalProvider: React.FC = ({ children }) => {
@@ -26,11 +27,11 @@ export const PortalProvider: React.FC = ({ children }) => {
 
 export const Portal: React.FC = ({ children }) => {
   useEffect(() => {
-    transportedComponent = <>{children}</>;
+    transportedComponent.add(children);
     listener();
 
     return () => {
-      transportedComponent = <></>;
+      transportedComponent.delete(children);
       listener();
     };
   }, [children]);

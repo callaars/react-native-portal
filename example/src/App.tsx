@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { StyleSheet, View, Text } from 'react-native';
 import { Portal, PortalProvider } from '@callaars/react-native-portal';
 
@@ -11,7 +10,12 @@ export default function App() {
       </View>
       <Portal>
         <View style={styles.portal}>
-          <Text>This view is portaled from below.</Text>
+          <Text>This view is portal from below.</Text>
+        </View>
+      </Portal>
+      <Portal>
+        <View style={styles.portal}>
+          <Text>Another portal view.</Text>
         </View>
       </Portal>
     </PortalProvider>
